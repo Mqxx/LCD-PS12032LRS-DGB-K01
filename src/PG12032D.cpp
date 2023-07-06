@@ -77,8 +77,8 @@ void PG12032D::begin() {
  * You still have to call {@link refresh} for the buffer to take effect.
 */
 void PG12032D::clear() {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 120; j++) {
+    for (int i = 0; i < CHIP_PAGES; i++) {
+        for (int j = 0; j < CHIP_COLUMNS * 2; j++) {
             _buffer[j][i] = 0;
         }
     }
@@ -275,12 +275,12 @@ size_t PG12032D::write(uint8_t value) {
  * get drawn to both display halves in "parallel".
 */
 void PG12032D::refresh() {
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < CHIP_PAGES; i++) {
         command(LCD_PAGE | i);
         command(LCD_COLUMN | 0);
-        for (int j = 0; j < 60; j++) {
+        for (int j = 0; j < CHIP_COLUMNS; j++) {
             writeData(_e1_pin, _buffer[j][i]);
-            writeData(_e2_pin, _buffer[j + 60][i]);
+            writeData(_e2_pin, _buffer[j + CHIP_COLUMNS][i]);
         }
     }
 }

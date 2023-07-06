@@ -64,5 +64,5 @@ private:
     uint8_t _e1_pin;
     uint8_t _e2_pin;
     uint8_t _data_pins[8];
-    uint8_t _buffer[120][4];
+    uint8_t _buffer[CHIP_COLUMNS * 2][CHIP_PAGES];
 };
