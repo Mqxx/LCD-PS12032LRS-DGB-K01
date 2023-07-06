@@ -1,5 +1,6 @@
-# LCD-PS12032LRS-DGB-K01
+# PG12032D Display driver library for Arduino
 
-Controller datasheet: https://www.lcd-module.de/eng/pdf/zubehoer/sbn1661g_v4_oct_21_2005.pdf
+This repo contains a simple library that has all necessary methods to interact with any of the PG12032D series displays from Powertip.
 
-Compatible Controller datasheet (nice table): https://www.lcd-module.de/eng/pdf/zubehoer/sed1520.pdf
+The documentation for each library function is over the source and as a rendered markdown file in the [docs](docs/API.md) folder.
+The documentation for the display, its used chip and its protocol can be found in the [docs/datasheet](docs/datasheets//README.md) folder.
