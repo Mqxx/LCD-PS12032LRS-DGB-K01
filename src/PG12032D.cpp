@@ -257,10 +257,10 @@ size_t PG12032D::write(uint8_t value) {
     for (int i = 0; i <8; i++) {
         byte got_char = pgm_read_byte_near(FONT + (value - CHAR_OFFSET) * 8 + i);
         for (int j = 0; j < 8; j++) {
-            if (got_char & (1 << j)) {
-                setPixel(_v_cursor_x + i, _v_cursor_y + j);
+            if (got_char & (0x80 >> j)) {
+                setPixel(_v_cursor_x + j, _v_cursor_y + i);
             } else {
-                clearPixel(_v_cursor_x + i, _v_cursor_y + j);
+                clearPixel(_v_cursor_x + j, _v_cursor_y + i);
             }
         }
     }
