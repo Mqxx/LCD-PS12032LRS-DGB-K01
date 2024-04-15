@@ -4,3 +4,5 @@ This repo contains a simple library that has all necessary methods to interact w
 
 The documentation for each library function is over the source and as a rendered markdown file in the [docs](docs/API.md) folder.
 The documentation for the display, its used chip and its protocol can be found in the [docs/datasheet](docs/datasheets//README.md) folder.
+
+All rights to the original data sheets belong to [Powertip](https://www.powertip.com.tw/index.php).
